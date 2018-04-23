@@ -1,0 +1,6 @@
+usr/local/bin/cryptorescue-qt usr/bin
+share/pixmaps/cryptorescue32.xpm usr/share/pixmaps
+share/pixmaps/cryptorescue16.xpm usr/share/pixmaps
+share/pixmaps/cryptorescue128.png usr/share/pixmaps
+debian/cryptorescue-qt.desktop usr/share/applications
+debian/cryptorescue-qt.protocol usr/share/kde4/services/

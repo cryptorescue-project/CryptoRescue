@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/cryptorescue/.cryptorescue" ]; then
+	CRYPTORESCUED_DEFAULT_DATADIR="/var/lib/cryptorescue/.cryptorescue"
+else
+	CRYPTORESCUED_DEFAULT_DATADIR="/var/lib/cryptorescued"
+fi
+
+CRYPTORESCUED_CONFIGFILE=${CRYPTORESCUED_CONFIGFILE:-/etc/cryptorescue/cryptorescue.conf}
+CRYPTORESCUED_PIDDIR=${CRYPTORESCUED_PIDDIR:-/var/run/cryptorescued}
+CRYPTORESCUED_PIDFILE=${CRYPTORESCUED_PIDFILE:-${CRYPTORESCUED_PIDDIR}/cryptorescued.pid}
+CRYPTORESCUED_DATADIR=${CRYPTORESCUED_DATADIR:-${CRYPTORESCUED_DEFAULT_DATADIR}}
+CRYPTORESCUED_USER=${CRYPTORESCUED_USER:-${CRYPTORESCUE_USER:-cryptorescue}}
+CRYPTORESCUED_GROUP=${CRYPTORESCUED_GROUP:-cryptorescue}
+CRYPTORESCUED_BIN=${CRYPTORESCUED_BIN:-/usr/bin/cryptorescued}
+CRYPTORESCUED_NICE=${CRYPTORESCUED_NICE:-${NICELEVEL:-0}}
+CRYPTORESCUED_OPTS="${CRYPTORESCUED_OPTS:-${CRYPTORESCUE_OPTS}}"
+
+name="CryptoRescue Core Daemon"
+description="CryptoRescue cryptocurrency P2P network daemon"
+
+command="/usr/bin/cryptorescued"
+command_args="-pid=\"${CRYPTORESCUED_PIDFILE}\" \
+		-conf=\"${CRYPTORESCUED_CONFIGFILE}\" \
+		-datadir=\"${CRYPTORESCUED_DATADIR}\" \
+		-daemon \
+		${CRYPTORESCUED_OPTS}"
+
+required_files="${CRYPTORESCUED_CONFIGFILE}"
+start_stop_daemon_args="-u ${CRYPTORESCUED_USER} \
+			-N ${CRYPTORESCUED_NICE} -w 2000"
+pidfile="${CRYPTORESCUED_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${CRYPTORESCUED_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${CRYPTORESCUED_USER}:${CRYPTORESCUED_GROUP}" \
+	"${CRYPTORESCUED_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${CRYPTORESCUED_USER}:${CRYPTORESCUED_GROUP}" \
+	"${CRYPTORESCUED_PIDDIR}"
+
+	checkpath -f \
+	-o ${CRYPTORESCUED_USER}:${CRYPTORESCUED_GROUP} \
+	-m 0660 \
+	${CRYPTORESCUED_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${CRYPTORESCUED_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run cryptorescued."
+		eerror "The setting must appear in ${CRYPTORESCUED_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"CryptoRescue Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

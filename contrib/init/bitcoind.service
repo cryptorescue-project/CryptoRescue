@@ -1,0 +1,22 @@
+[Unit]
+Description=CryptoRescue's distributed currency daemon
+After=network.target
+
+[Service]
+User=cryptorescue
+Group=cryptorescue
+
+Type=forking
+PIDFile=/var/lib/cryptorescued/cryptorescued.pid
+ExecStart=/usr/bin/cryptorescued -daemon -pid=/var/lib/cryptorescued/cryptorescued.pid \
+-conf=/etc/cryptorescue/cryptorescue.conf -datadir=/var/lib/cryptorescued -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

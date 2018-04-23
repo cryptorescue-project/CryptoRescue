@@ -1,0 +1,11 @@
+[Protocol]
+exec=cryptorescue-qt '%u'
+protocol=cryptorescue
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

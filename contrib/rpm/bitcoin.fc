@@ -1,0 +1,8 @@
+/usr/bin/cryptorescue-cli		--	gen_context(system_u:object_r:cryptorescue_exec_t,s0)
+/usr/sbin/cryptorescued		--	gen_context(system_u:object_r:cryptorescue_exec_t,s0)
+/usr/lib(64)?/cryptorescue/cryptorescued		--	gen_context(system_u:object_r:cryptorescue_exec_t,s0)
+
+/etc/cryptorescue(/.*)?		gen_context(system_u:object_r:cryptorescue_conf_t,s0)
+/var/lib/cryptorescue(/.*)?		gen_context(system_u:object_r:cryptorescue_var_lib_t,s0)
+
+(/var)?/run/cryptorescued(/.*)?   gen_context(system_u:object_r:cryptorescue_var_run_t,s0)

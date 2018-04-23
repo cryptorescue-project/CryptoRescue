@@ -1,0 +1,33 @@
+# /etc/conf.d/cryptorescued: config file for /etc/init.d/cryptorescued
+
+# Config file location
+#CRYPTORESCUED_CONFIGFILE="/etc/cryptorescue/cryptorescue.conf"
+
+# What directory to write pidfile to?  (created and owned by $CRYPTORESCUED_USER)
+#CRYPTORESCUED_PIDDIR="/var/run/cryptorescued"
+
+# What filename to give the pidfile
+#CRYPTORESCUED_PIDFILE="${CRYPTORESCUED_PIDDIR}/cryptorescued.pid"
+
+# Where to write cryptorescued data (be mindful that the blockchain is large)
+#CRYPTORESCUED_DATADIR="/var/lib/cryptorescued"
+
+# User and group to own cryptorescued process
+#CRYPTORESCUED_USER="cryptorescue"
+#CRYPTORESCUED_GROUP="cryptorescue"
+
+# Path to cryptorescued executable
+#CRYPTORESCUED_BIN="/usr/bin/cryptorescued"
+
+# Nice value to run cryptorescued under
+#CRYPTORESCUED_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#CRYPTORESCUED_OPTS=""
+
+# The timeout in seconds OpenRC will wait for cryptorescued to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+CRYPTORESCUED_SIGTERM_TIMEOUT=60

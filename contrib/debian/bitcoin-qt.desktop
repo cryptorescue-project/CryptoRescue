@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CryptoRescue Core
+Comment=Connect to the CryptoRescue P2P Network
+Comment[de]=Verbinde mit dem CryptoRescue peer-to-peer Netzwerk
+Comment[fr]=CryptoRescue, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CryptoRescue, eşten eşe kriptografik sanal para birimi
+Exec=cryptorescue-qt %u
+Terminal=false
+Type=Application
+Icon=cryptorescue128
+MimeType=x-scheme-handler/cryptorescue;
+Categories=Office;Finance;
