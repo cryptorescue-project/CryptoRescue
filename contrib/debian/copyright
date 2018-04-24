@@ -1,11 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: CryptoRescue
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
- irc://#cryptorescue@freenode.net
 Source: https://github.com/cryptorescue-project/CryptoRescue
 
 Files: *
-Copyright: 2009-2017, CryptoRescue Core Developers
+Copyright: 2018, CryptoRescue Developers
 License: Expat
 Comment: The CryptoRescue Core Developers encompasses the current developers listed on cryptorescue.org,
          as well as the numerous contributors to the project.
