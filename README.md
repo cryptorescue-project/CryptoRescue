@@ -11,11 +11,7 @@ https://cryptorescue.org
 What is CryptoRescue?
 ----------------
 
-CryptoRescue is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. CryptoRescue uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. CryptoRescue Core is the name of open source
-software which enables the use of this currency.
+Here at CryptoRescue, we are driven by a single goal; to do our part in making the world a better place for all animals. We strive to build productive relationships and make a positive impact with all organizations big and small to assist with donations. With this initiative, our goal is to promote great opportunities for those in need with the rescued animals. Learn more about our work by getting in touch with our team today.
 
 For more information, as well as an immediately useable, binary version of
 the CryptoRescue Core software, see https://cryptorescue.org
@@ -75,12 +71,14 @@ not straightforward.
 
 About CryptoRescue
 ----------------
-A digital peer-to-peer network for the facilitation of asset transfer.   Optimzed for miners who have encountered power management issues (power fluctuation volatility) in their experiences thus far with the new x16r mining algorithm. 
+A digital peer-to-peer network for the facilitation of asset transfer. Optimzed for miners who have encountered power management issues (power fluctuation volatility) in their experiences thus far with the new x16r mining algorithm. 
 
-Thanks and due credit are extended to the Bitcoin and Ravencoin developers. 
+Thanks and due credit are extended to the Bitcoin and Ravencoin developers, as well as Pigeoncoin. 
 
-The CryptoRescue project is launched based on the hard work and continuous effort of over 400 Bitcoin developers who made over 14,000 commits over the life to date of the Bitcoin project, as well as those developers who worked on Ravencoin, the reference implementation of x16r.  We are eternally grateful  for their efforts and diligence in making secure networks, and their support of free and open source software development.  The CryptoRescue experiment rests solidly on the foundation you built.
+The CryptoRescue project is launched based on the hard work and continuous effort of over 400 Bitcoin developers who made over 14,000 commits over the life to date of the Bitcoin project, as well as those developers who worked on Ravencoin and Pigeoncoin, the reference implementation of x16r and x16s. We are eternally grateful  for their efforts and diligence in making secure networks, and their support of free and open source software development. The CryptoRescue experiment rests solidly on the foundation you built.
 
+Our Mission
+Here at CryptoRescue, we are driven by a single goal; to do our part in making the world a better place for all animals. We strive to build productive relationships and make a positive impact with all organizations big and small to assist with donations. With this initiative, our goal is to promote great opportunities for those in need with the rescued animals. Learn more about our work by getting in touch with our team today.
 
 Abstract
 CryptoRescue aims to implement a blockchain which is optimized specifically for the use case of transferring assets such as securities from one holder to another. Based on the extensive development and testing of Bitcoin, CryptoRescue is built on a fork of the Bitcoin code. Key changes include a faster block reward time and a change in the quantity of coins. Note that the coin quantity change does not change the inherent weighed distribution schedule.
