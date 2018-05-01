@@ -3,7 +3,7 @@
 </p>
 
 
-CryptoRescue Core integration/staging tree
+CryptoRescue integration/staging tree
 =====================================
 
 https://cryptorescue.org
@@ -14,12 +14,12 @@ What is CryptoRescue?
 Here at CryptoRescue, we are driven by a single goal; to do our part in making the world a better place for all animals. We strive to build productive relationships and make a positive impact with all organizations big and small to assist with donations. With this initiative, our goal is to promote great opportunities for those in need with the rescued animals. Learn more about our work by getting in touch with our team today.
 
 For more information, as well as an immediately useable, binary version of
-the CryptoRescue Core software, see https://cryptorescue.org
+the CryptoRescue software, see https://cryptorescue.org
 
 License
 -------
 
-CryptoRescue Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+CryptoRescue is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
@@ -27,7 +27,7 @@ Development Process
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/cryptorescue-project/CryptoRescue/tags) are created
-regularly to indicate new official, stable release versions of CryptoRescue Core.
+regularly to indicate new official, stable release versions of CryptoRescue.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
