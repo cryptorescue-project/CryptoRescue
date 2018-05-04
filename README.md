@@ -3,7 +3,7 @@
 </p>
 
 
-CryptoRescue integration/staging tree
+CryptoRescue Website
 =====================================
 
 https://cryptorescue.org
@@ -15,6 +15,18 @@ Here at CryptoRescue, we are driven by a single goal; to do our part in making t
 
 For more information, as well as an immediately useable, binary version of
 the CryptoRescue software, see https://cryptorescue.org
+
+Build on Ubuntu 16.04
+-------
+git clone https://github.com/cryptorescue-project/cryptorescue.git
+
+cd cryptorescue
+
+./autogen.sh
+
+./configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX CXXFLAGS="-fPIC" CPPFLAGS="-fPIC"
+
+make
 
 License
 -------
