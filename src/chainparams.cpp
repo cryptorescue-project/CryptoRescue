@@ -173,7 +173,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000000f59ccfe0a38b90a9f21eaa68dd2a8c878943fb789c8a39ea49aa37856e"));
         assert(genesis.hashMerkleRoot == uint256S("0xd3418790de73253172adfdc5af333c0d79778497e1202c1fc8cde0c0fee24d80"));
 
-        vSeeds.emplace_back("dnsseed.cryptorescue.org", false); // Cryptore
+        vSeeds.emplace_back("dnsseed.cryptorescue.org", true); // Cryptore
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28); // changed 60 to 55
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122); // changed 122 to 123
@@ -256,7 +256,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.emplace_back("testnet-dnsseed.cryptorescue.org", false);
+        vSeeds.emplace_back("testnet-dnsseed.cryptorescue.org", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,88); // from 111
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,193); // from 196
