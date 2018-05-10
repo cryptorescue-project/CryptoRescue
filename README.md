@@ -1,3 +1,5 @@
+# CryptoRescueCore
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/cryptorescue-project/CryptoRescue/master/doc/cryptorescue.png">
 </p>
