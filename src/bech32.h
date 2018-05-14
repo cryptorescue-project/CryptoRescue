@@ -23,3 +23,4 @@ std::string Encode(const std::string& hrp, const std::vector<uint8_t>& values);
 std::pair<std::string, std::vector<uint8_t>> Decode(const std::string& str);
 
 } // namespace bech32
+

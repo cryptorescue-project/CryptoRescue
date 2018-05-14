@@ -77,9 +77,11 @@ endif
 # cryptorescue core #
 CRYPTORESCUE_CORE_H = \
   addrdb.h \
+  addressindex.h \
+  spentindex.h \
+  timestampindex.h \
   addrman.h \
   base58.h \
-  bech32.h \
   bloom.h \
   blockencodings.h \
   chain.h \
@@ -355,7 +357,6 @@ libcryptorescue_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(CRYPTORESCUE_INCLUDES)
 libcryptorescue_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcryptorescue_common_a_SOURCES = \
   base58.cpp \
-  bech32.cpp \
   chainparams.cpp \
   coins.cpp \
   compressor.cpp \
@@ -537,10 +538,6 @@ clean-local:
 	@test -f $(WINDRES)
 	## FIXME: How to get the appropriate modulename_CPPFLAGS in here?
 	$(AM_V_GEN) $(WINDRES) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CPPFLAGS) -DWINDRES_PREPROC -i $< -o $@
-
-.mm.o:
-	$(AM_V_CXX) $(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	  $(CPPFLAGS) $(AM_CXXFLAGS) $(QT_INCLUDES) $(AM_CXXFLAGS) $(PIE_FLAGS) $(CXXFLAGS) -c -o $@ $<
 
 check-symbols: $(bin_PROGRAMS)
 if GLIBC_BACK_COMPAT

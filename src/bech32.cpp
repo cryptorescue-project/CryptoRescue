@@ -189,3 +189,4 @@ std::pair<std::string, data> Decode(const std::string& str) {
 }
 
 } // namespace bech32
+
