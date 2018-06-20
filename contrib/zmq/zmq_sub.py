@@ -9,10 +9,10 @@
 
     CryptoRescue should be started with the command line arguments:
         cryptorescued -testnet -daemon \
-                -zmqpubhashblock=tcp://127.0.0.1:28756 \
-                -zmqpubrawtx=tcp://127.0.0.1:28756 \
-                -zmqpubhashtx=tcp://127.0.0.1:28756 \
-                -zmqpubhashblock=tcp://127.0.0.1:28756
+                -zmqpubhashblock=tcp://127.0.0.1:27756 \
+                -zmqpubrawtx=tcp://127.0.0.1:27756 \
+                -zmqpubhashtx=tcp://127.0.0.1:27756 \
+                -zmqpubhashblock=tcp://127.0.0.1:27756
 
     We use the asyncio library here.  `self.handle()` installs itself as a
     future at the end of the function.  Since it never returns with the event
@@ -35,7 +35,7 @@ if not (sys.version_info.major >= 3 and sys.version_info.minor >= 5):
     print("This example only works with Python 3.5 and greater")
     sys.exit(1)
 
-port = 28756
+port = 27756
 
 class ZMQHandler():
     def __init__(self):

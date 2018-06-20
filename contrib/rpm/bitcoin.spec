@@ -332,9 +332,9 @@ if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
 	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/cryptorescue.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 8756
+%{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 7756
 %{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 8757
-%{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 18756
+%{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 17756
 %{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 18757
 %{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 18443
 %{_sbindir}/semanage port -a -t cryptorescue_port_t -p tcp 18444
@@ -353,9 +353,9 @@ fi
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
-	%{_sbindir}/semanage port -d -p tcp 8756
+	%{_sbindir}/semanage port -d -p tcp 7756
 	%{_sbindir}/semanage port -d -p tcp 8757
-	%{_sbindir}/semanage port -d -p tcp 18756
+	%{_sbindir}/semanage port -d -p tcp 17756
 	%{_sbindir}/semanage port -d -p tcp 18757
 	%{_sbindir}/semanage port -d -p tcp 18443
 	%{_sbindir}/semanage port -d -p tcp 18444
