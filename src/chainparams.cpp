@@ -174,6 +174,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xd3418790de73253172adfdc5af333c0d79778497e1202c1fc8cde0c0fee24d80"));
 
         vSeeds.emplace_back("dnsseed.cryptorescue.org", true); // Cryptore
+        vSeeds.emplace_back("52.91.57.18", true); // Cryptore
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28); // changed 60 to 55
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122); // changed 122 to 123
